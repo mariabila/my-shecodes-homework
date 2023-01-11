@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How's the Weather🌏</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/140896dbfa.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="weatherApp">
+        <header class="searchbar">
+          <form id="searchBar">
+            <input
+              type="text"
+              placeholder="Enter city name here"
+              class="enterCity"
+              id="cityInput"
+            />
+            <input type="submit" value="Search" class="searchButton" />
+            <input
+              type="button"
+              value="Current location"
+              class="locationButton"
+              id="locButton"
+            />
+          </form>
+        </header>
+        <section class="currentWeather">
+          <div class="row">
+            <div class="col">
+              <h1>Gdansk <i class="fa-regular fa-face-smile"></i></h1>
+              <h2>
+                <span class="tempNow" id="temperatureNow">16</span>
+                <a href="#" class="tempC" id="temperatureC">°C</a>|<a
+                  href="#"
+                  class="tempF"
+                  id="temperatureF"
+                  >°F</a
+                >
+                <i class="fa-solid fa-cloud-sun"></i>
+              </h2>
+            </div>
+            <div class="col">
+              <div class="row">
+                <div class="col-sm">
+                  <div class="currentDate" id="nowDate">Monday, October 17</div>
+                </div>
+              </div>
+
+              <div class="row no-gutters">
+                <div class="col-sm">
+                  <div class="quality">feels like 16°C</div>
+                </div>
+                <div class="col-sm">
+                  <div class="quality">wind 14 km/h</div>
+                </div>
+                <div class="col-sm">
+                  <div class="quality">humidity 81%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="forecast">
+          <div class="row">
+            <div class="col">
+              <ul class="upcomingDay">
+                <li>Tue</li>
+                <li>15°C</li>
+                <li><i class="fa-solid fa-cloud-sun"></i></li>
+              </ul>
+            </div>
+            <div class="col">
+              <ul class="upcomingDay">
+                <li>Wed</li>
+                <li>10°C</li>
+                <li><i class="fa-solid fa-cloud-rain"></i></li>
+              </ul>
+            </div>
+            <div class="col">
+              <ul class="upcomingDay">
+                <li>Thu</li>
+                <li>12°C</li>
+                <li><i class="fa-solid fa-cloud-sun"></i></li>
+              </ul>
+            </div>
+            <div class="col">
+              <ul class="upcomingDay">
+                <li>Fri</li>
+                <li>11°C</li>
+                <li><i class="fa-solid fa-cloud-rain"></i></li>
+              </ul>
+            </div>
+            <div class="col">
+              <ul class="upcomingDay">
+                <li>Sat</li>
+                <li>14°C</li>
+                <li><i class="fa-solid fa-cloud-rain"></i></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <footer class="coderInfo">
+          Coded by
+          <a
+            class="Instagram link"
+            href="https://www.instagram.com/mariabila/"
+            target="_blank"
+            >Maria Bila🇺🇦</a
+          >
+          from
+          <a class="school link" href="https://www.shecodes.io/" target="_blank"
+            >SheCodes</a
+          >, open-source code
+          <a
+            class="codeLink link"
+            href="https://github.com/mariabila"
+            target="_blank"
+            >here👀</a
+          >
+        </footer>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
