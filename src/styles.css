@@ -1,0 +1,116 @@
+.weatherApp {
+  display: block;
+  max-width: 700px;
+  margin: 75px auto;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background: linear-gradient(to top, #e0a1ed 5%, #fdf4ff 95%);
+  font-family: "Quicksand", sans-serif;
+  font-weight: 200;
+  color: rgb(66, 42, 79);
+  box-shadow: 2px 4px 6px rgba(42, 27, 51, 0.4);
+}
+.searchbar {
+  display: block;
+  max-width: 600px;
+  margin: 15px auto;
+}
+
+.enterCity {
+  padding: 0 40px;
+  font-size: 18px;
+  line-height: 34px;
+  color: rgb(66, 42, 79);
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgb(66, 42, 79);
+  border-radius: 25px;
+  outline: none;
+}
+.searchButton,
+.locationButton {
+  background-color: rgb(66, 42, 79);
+  color: rgb(196, 171, 211);
+  margin: 7px 5px;
+  padding: 0 25px;
+  font-size: 18px;
+  line-height: 34px;
+  border: 1px solid rgb(66, 42, 79);
+  border-radius: 25px;
+}
+.searchButton:hover,
+.locationButton:hover {
+  background-color: rgba(196, 171, 211, 0.5);
+  border: 1px solid rgb(66, 42, 79);
+  font-size: 18px;
+  color: rgb(66, 42, 79);
+}
+.currentWeather {
+  padding: 15px 10px;
+}
+h1,
+h2 {
+  font-family: "Baloo Tamma 2", cursive;
+  font-weight: 600;
+}
+.tempC,
+.tempF {
+  color: rgb(66, 42, 79);
+  font-weight: 400;
+}
+.tempC:hover,
+.tempF:hover {
+  color: rgb(66, 42, 79);
+  font-weight: 600;
+}
+.currentDate {
+  display: block;
+  margin: 5px 0;
+  padding: 5px 20px;
+  background-color: rgba(196, 171, 211, 0.5);
+  border: 1px solid rgb(196, 171, 211);
+  border-radius: 25px;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+.quality {
+  display: block;
+  padding: 5px 4px;
+  margin: 10px 5px;
+  background-color: rgba(196, 171, 211, 0.5);
+  border: 1px solid rgb(196, 171, 211);
+  border-radius: 25px;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+}
+.forecast {
+  padding: 15px 10px;
+}
+.upcomingDay {
+  list-style: none;
+  text-align: center;
+  display: block;
+  background-color: rgba(196, 171, 211, 0.2);
+  border: 1px solid rgba(66, 42, 79, 0.3);
+  border-radius: 2px;
+  padding: 15px 0;
+  font-size: 16px;
+  line-height: 35px;
+  box-shadow: 1px 2px 2px rgba(42, 27, 51, 0.4);
+}
+.coderInfo {
+  font-family: monospace;
+  font-weight: 200;
+  font-size: 11px;
+  position: relative;
+  left: 10px;
+}
+.link {
+  font-weight: 600;
+  color: rgb(66, 42, 79);
+}
+.link:hover {
+  color: rgb(66, 42, 79);
+  font-size: 14px;
+}
