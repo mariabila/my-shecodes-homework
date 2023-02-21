@@ -52,6 +52,12 @@ h2 {
   font-family: "Baloo Tamma 2", cursive;
   font-weight: 600;
 }
+h1 {
+  margin-bottom: 0;
+}
+small {
+  margin-top: 0;
+}
 .tempC,
 .tempF {
   color: rgb(66, 42, 79);
