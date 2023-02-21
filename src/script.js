@@ -44,17 +44,26 @@ currentDay.innerHTML = `${day}, ${month} ${date}, ${time}`;
 let apiKey = `597c40c39084687093b091cd48b366f8`;
 let cityName = document.querySelector("h1");
 let temperatureNow = document.querySelector(`#temperatureNow`);
+let weatherDescription = document.querySelector(`small`);
+let temperatureFeeling = document.querySelector(`#temp_feeling`);
+let humidityNow = document.querySelector(`#humidity`);
 
 function checkWeather(event) {
   event.preventDefault();
   let inputCity = document.querySelector("#cityInput");
-  cityName.innerHTML = `${inputCity.value} <i class="fa-regular fa-face-smile"></i>`;
+  cityName.innerHTML = `${inputCity.value}`;
 
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity.value}&units=metric&appid=${apiKey}`;
 
   function showTemperature(response) {
     let temperature = Math.round(response.data.main.temp);
     temperatureNow.innerHTML = temperature;
+    //let description = response.data.weather;
+    //weatherDescription.innerHTML = description;
+    let feeling = Math.round(response.data.main.feels_like);
+    temperatureFeeling.innerHTML = `feels like ` + feeling + `°C`;
+    let humidity = response.data.main.humidity;
+    humidityNow.innerHTML = humidity + `%`;
   }
   axios.get(apiUrl).then(showTemperature);
 }
