@@ -47,6 +47,7 @@ let temperatureNow = document.querySelector(`#temperatureNow`);
 let weatherDescription = document.querySelector(`small`);
 let temperatureFeeling = document.querySelector(`#temp_feeling`);
 let humidityNow = document.querySelector(`#humidity`);
+let windSpeed = document.querySelector(`#wind`);
 
 function checkWeather(event) {
   event.preventDefault();
@@ -58,12 +59,19 @@ function checkWeather(event) {
   function showTemperature(response) {
     let temperature = Math.round(response.data.main.temp);
     temperatureNow.innerHTML = temperature;
-    //let description = response.data.weather;
-    //weatherDescription.innerHTML = description;
+
+    let weather = response.data.weather[0];
+
+    if (weather) {
+      weatherDescription.innerHTML = weather.description;
+    }
+
     let feeling = Math.round(response.data.main.feels_like);
     temperatureFeeling.innerHTML = `feels like ` + feeling + `°C`;
     let humidity = response.data.main.humidity;
     humidityNow.innerHTML = humidity + `%`;
+    let wind = Math.round(response.data.wind.speed * 3.6);
+    windSpeed.innerHTML = `wind ` + wind + ` km/h`;
   }
   axios.get(apiUrl).then(showTemperature);
 }
