@@ -1,6 +1,3 @@
-//homework week 3
-//look at notepad
-//homework week 4
 let now = new Date();
 let months = [
   "January",
@@ -49,6 +46,8 @@ let temperatureFeeling = document.querySelector(`#temp_feeling`);
 let humidityNow = document.querySelector(`#humidity`);
 let windSpeed = document.querySelector(`#wind`);
 
+let celciusLink = document.querySelector(`#temperatureC`);
+
 function checkWeather(event) {
   event.preventDefault();
   let inputCity = document.querySelector("#cityInput");
@@ -59,13 +58,8 @@ function checkWeather(event) {
   function showTemperature(response) {
     let temperature = Math.round(response.data.main.temp);
     temperatureNow.innerHTML = temperature;
-
-    let weather = response.data.weather[0];
-
-    if (weather) {
-      weatherDescription.innerHTML = weather.description;
-    }
-
+    let weather = response.data.weather[0].description;
+    weatherDescription.innerHTML = weather;
     let feeling = Math.round(response.data.main.feels_like);
     temperatureFeeling.innerHTML = `feels like ` + feeling + `°C`;
     let humidity = response.data.main.humidity;
@@ -97,22 +91,39 @@ function checkLocationWeather(event) {
 let locationButton = document.querySelector("#locButton");
 locationButton.addEventListener("click", checkLocationWeather);
 
-//Temperature Convertion:
-//let currentCelsius = 16;
-//let currentFahrenheit = Math.round((currentCelsius * 9) / 5 + 32);
+function showFahrenheit(event) {
+  event.preventDefault();
+  let inputCity = document.querySelector("#cityInput");
+  cityName.innerHTML = `${inputCity.value}`;
 
-//function showFahrenheit(event) {
-//  event.preventDefault();
-//  let tempNow = document.querySelector("#temperatureNow");
-//  tempNow.innerHTML = currentFahrenheit;
-//}
-//let measureF = document.querySelector("#temperatureF");
-//measureF.addEventListener("click", showFahrenheit);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity.value}&units=metric&appid=${apiKey}`;
+  function getFahrenheit(response) {
+    let currentFahrenheit = Math.round((response.data.main.temp * 9) / 5 + 32);
+    temperatureNow.innerHTML = currentFahrenheit;
+    let currentFahrenheitFeeling = Math.round(
+      (response.data.main.feels_like * 9) / 5 + 32
+    );
+    temperatureFeeling.innerHTML =
+      `feels like ` + currentFahrenheitFeeling + `°F`;
+  }
+  axios.get(apiUrl).then(getFahrenheit);
+}
+let fahrenheitLink = document.querySelector(`#temperatureF`);
+fahrenheitLink.addEventListener("click", showFahrenheit);
 
-//function showCelcius(event) {
-//event.preventDefault();
-//let tempNow = document.querySelector("#temperatureNow");
-//tempNow.innerHTML = currentCelsius;
-//}
-//let measureC = document.querySelector("#temperatureC");
-//measureC.addEventListener("click", showCelcius);
+function showCelsius(event) {
+  event.preventDefault();
+  let inputCity = document.querySelector("#cityInput");
+  cityName.innerHTML = `${inputCity.value}`;
+
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity.value}&units=metric&appid=${apiKey}`;
+  function getCelsius(response) {
+    let currentCelsius = Math.round(response.data.main.temp);
+    temperatureNow.innerHTML = currentCelsius;
+    let currentCelsiusFeeling = Math.round(response.data.main.feels_like);
+    temperatureFeeling.innerHTML = `feels like ` + currentCelsiusFeeling + `°C`;
+  }
+  axios.get(apiUrl).then(getCelsius);
+}
+let celsiusLink = document.querySelector(`#temperatureC`);
+celsiusLink.addEventListener("click", showCelsius);
