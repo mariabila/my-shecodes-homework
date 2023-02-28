@@ -45,8 +45,7 @@ let weatherDescription = document.querySelector(`small`);
 let temperatureFeeling = document.querySelector(`#temp_feeling`);
 let humidityNow = document.querySelector(`#humidity`);
 let windSpeed = document.querySelector(`#wind`);
-
-let celciusLink = document.querySelector(`#temperatureC`);
+let weatherIcon = document.querySelector(`#weatherIcon`);
 
 function checkWeather(event) {
   event.preventDefault();
@@ -66,6 +65,10 @@ function checkWeather(event) {
     humidityNow.innerHTML = humidity + `%`;
     let wind = Math.round(response.data.wind.speed * 3.6);
     windSpeed.innerHTML = `wind ` + wind + ` km/h`;
+    weatherIcon.setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
   }
   axios.get(apiUrl).then(showTemperature);
 }
