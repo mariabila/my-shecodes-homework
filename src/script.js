@@ -62,7 +62,7 @@ function checkWeather(event) {
     let feeling = Math.round(response.data.main.feels_like);
     temperatureFeeling.innerHTML = `feels like ` + feeling + `°C`;
     let humidity = response.data.main.humidity;
-    humidityNow.innerHTML = humidity + `%`;
+    humidityNow.innerHTML = `humidity ` + humidity + `%`;
     let wind = Math.round(response.data.wind.speed * 3.6);
     windSpeed.innerHTML = `wind ` + wind + ` km/h`;
     weatherIcon.setAttribute(
