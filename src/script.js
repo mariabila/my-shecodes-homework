@@ -47,6 +47,40 @@ let humidityNow = document.querySelector(`#humidity`);
 let windSpeed = document.querySelector(`#wind`);
 let weatherIcon = document.querySelector(`#weatherIcon`);
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector(`#forecast`);
+
+  let forecastHTML = `<div class="row">`;
+  let days = [`Mon`, `Tue`, `Wed`, `Thu`, `Fri`];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+              <ul class="upcomingDay">
+                <li class="forecast-date">${day}</li>
+                <li class="forecast-temperature">30°C</li>
+                <li>
+                  <img
+                    src="https://openweathermap.org/img/wn/04d@2x.png"
+                    id="weatherIcon"
+                    width="40 px"
+                    height="40 px"
+                  />
+                </li>
+              </ul>
+            </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(response.data);
+}
+
+function getForecast(coordinates) {
+  let apiKey1 = "2daf65f0cdaa917f11026e8a128ce271";
+  let apiUrl1 = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey1}&units=metric`;
+  axios.get(apiUrl1).then(displayForecast);
+}
+
 function checkWeather(event) {
   event.preventDefault();
   let inputCity = document.querySelector("#cityInput");
@@ -69,6 +103,8 @@ function checkWeather(event) {
       "src",
       `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
+
+    getForecast(response.data.coord);
   }
   axios.get(apiUrl).then(showTemperature);
 }
