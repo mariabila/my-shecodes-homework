@@ -46,7 +46,7 @@
             <input type="submit" value="Search" class="searchButton" />
             <input
               type="button"
-              value="Current location"
+              value="My location"
               class="locationButton"
               id="locButton"
             />
@@ -55,10 +55,10 @@
         <section class="currentWeather">
           <div class="row">
             <div class="col">
-              <h1>Gdansk</h1>
-              <small>light rain</small>
+              <h1>City</h1>
+              <small>weather description</small>
               <h2>
-                <span class="tempNow" id="temperatureNow">16</span>
+                <span class="tempNow" id="temperatureNow">t</span>
                 <a href="#" class="tempC" id="temperatureC">°C</a>|<a
                   href="#"
                   class="tempF"
@@ -66,7 +66,7 @@
                   >°F</a
                 >
                 <img
-                  src="https://openweathermap.org/img/wn/04d@2x.png"
+                  src="https://openweathermap.org/img/wn/02d@2x.png"
                   id="weatherIcon"
                   width="50 px"
                   height="50 px"
@@ -76,19 +76,19 @@
             <div class="col">
               <div class="row">
                 <div class="col-sm">
-                  <div class="currentDate" id="nowDate">Monday, October 17</div>
+                  <div class="currentDate" id="nowDate">Today's date</div>
                 </div>
               </div>
 
               <div class="row no-gutters">
                 <div class="col-sm">
-                  <div class="quality" id="temp_feeling">feels like 16°C</div>
+                  <div class="quality" id="temp_feeling">feels like</div>
                 </div>
                 <div class="col-sm">
-                  <div class="quality" id="wind">wind 14 km/h</div>
+                  <div class="quality" id="wind">wind speed</div>
                 </div>
                 <div class="col-sm">
-                  <div class="quality" id="humidity">humidity 81%</div>
+                  <div class="quality" id="humidity">humidity level</div>
                 </div>
               </div>
             </div>
@@ -98,11 +98,81 @@
           <div class="row">
             <div class="col-2">
               <ul class="upcomingDay">
+                <li class="forecast-date">Mon</li>
+                <li class="forecast-temperature">t°C</li>
+                <li>
+                  <img
+                    src="https://openweathermap.org/img/wn/01d@2x.png"
+                    id="weatherIcon"
+                    width="40 px"
+                    height="40 px"
+                  />
+                </li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul class="upcomingDay">
                 <li class="forecast-date">Tue</li>
-                <li class="forecast-temperature">15°C</li>
+                <li class="forecast-temperature">t°C</li>
+                <li>
+                  <img
+                    src="https://openweathermap.org/img/wn/02d@2x.png"
+                    id="weatherIcon"
+                    width="40 px"
+                    height="40 px"
+                  />
+                </li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul class="upcomingDay">
+                <li class="forecast-date">Wed</li>
+                <li class="forecast-temperature">t°C</li>
+                <li>
+                  <img
+                    src="https://openweathermap.org/img/wn/03d@2x.png"
+                    id="weatherIcon"
+                    width="40 px"
+                    height="40 px"
+                  />
+                </li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul class="upcomingDay">
+                <li class="forecast-date">Thu</li>
+                <li class="forecast-temperature">t°C</li>
                 <li>
                   <img
                     src="https://openweathermap.org/img/wn/04d@2x.png"
+                    id="weatherIcon"
+                    width="40 px"
+                    height="40 px"
+                  />
+                </li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul class="upcomingDay">
+                <li class="forecast-date">Fri</li>
+                <li class="forecast-temperature">t°C</li>
+                <li>
+                  <img
+                    src="https://openweathermap.org/img/wn/02d@2x.png"
+                    id="weatherIcon"
+                    width="40 px"
+                    height="40 px"
+                  />
+                </li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul class="upcomingDay">
+                <li class="forecast-date">Sat</li>
+                <li class="forecast-temperature">t°C</li>
+                <li>
+                  <img
+                    src="https://openweathermap.org/img/wn/01d@2x.png"
                     id="weatherIcon"
                     width="40 px"
                     height="40 px"

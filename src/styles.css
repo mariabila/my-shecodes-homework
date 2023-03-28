@@ -23,7 +23,7 @@
   color: rgb(66, 42, 79);
   background-color: rgba(255, 255, 255, 0.3);
   border: 1px solid rgb(66, 42, 79);
-  border-radius: 25px;
+  border-radius: 5px;
   outline: none;
 }
 .searchButton,
@@ -35,7 +35,7 @@
   font-size: 18px;
   line-height: 34px;
   border: 1px solid rgb(66, 42, 79);
-  border-radius: 25px;
+  border-radius: 5px;
 }
 .searchButton:hover,
 .locationButton:hover {
@@ -50,7 +50,7 @@
 h1,
 h2 {
   font-family: "Baloo Tamma 2", cursive;
-  font-weight: 600;
+  font-weight: 400;
 }
 h1 {
   margin-bottom: 0;
@@ -74,7 +74,7 @@ small {
   padding: 5px 20px;
   background-color: rgba(196, 171, 211, 0.5);
   border: 1px solid rgb(196, 171, 211);
-  border-radius: 25px;
+  border-radius: 5px;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
@@ -85,7 +85,7 @@ small {
   margin: 10px 5px;
   background-color: rgba(196, 171, 211, 0.5);
   border: 1px solid rgb(196, 171, 211);
-  border-radius: 25px;
+  border-radius: 5px;
   font-size: 12px;
   line-height: 14px;
   text-align: center;
@@ -98,7 +98,7 @@ small {
   text-align: center;
   display: block;
   background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 15px 0;
   font-size: 16px;
   line-height: 35px;
