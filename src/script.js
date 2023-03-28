@@ -47,22 +47,34 @@ let humidityNow = document.querySelector(`#humidity`);
 let windSpeed = document.querySelector(`#wind`);
 let weatherIcon = document.querySelector(`#weatherIcon`);
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [`Sun`, `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`];
+
+  return days[day];
+}
+
 function displayForecast(response) {
   let forecastData = response.data.daily;
   let forecastElement = document.querySelector(`#forecast`);
 
   let forecastHTML = `<div class="row">`;
-  let days = [`Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`];
-  forecastData.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
+  forecastData.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
               <ul class="upcomingDay">
-                <li class="forecast-date">${day}</li>
-                <li class="forecast-temperature">30°C</li>
+                <li class="forecast-date">${formatDay(forecastDay.dt)}</li>
+                <li class="forecast-temperature">${Math.round(
+                  forecastDay.temp.day
+                )}</li>
                 <li>
                   <img
-                    src="https://openweathermap.org/img/wn/04d@2x.png"
+                    src="https://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png"
                     id="weatherIcon"
                     width="40 px"
                     height="40 px"
@@ -70,10 +82,11 @@ function displayForecast(response) {
                 </li>
               </ul>
             </div>`;
+    }
   });
+
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(response.data);
 }
 
 function getForecast(coordinates) {
