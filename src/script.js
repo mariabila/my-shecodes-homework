@@ -48,11 +48,12 @@ let windSpeed = document.querySelector(`#wind`);
 let weatherIcon = document.querySelector(`#weatherIcon`);
 
 function displayForecast(response) {
+  let forecastData = response.data.daily;
   let forecastElement = document.querySelector(`#forecast`);
 
   let forecastHTML = `<div class="row">`;
-  let days = [`Mon`, `Tue`, `Wed`, `Thu`, `Fri`];
-  days.forEach(function (day) {
+  let days = [`Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`];
+  forecastData.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `<div class="col-2">
